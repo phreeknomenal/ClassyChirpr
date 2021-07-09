@@ -24,9 +24,9 @@ class App extends Component {
         }, 500)
     }
 
-    handleNewUserChange = (e) => this.setState({ newUser: e.target.value });
-    handleNewMessageChange = (e) => this.setState({ newMessage: e.target.value });
-    handleCreateNewChirp = (e) => {
+    handleNewUser = (e) => this.setState({ newUser: e.target.value });
+    handleNewMessage = (e) => this.setState({ newMessage: e.target.value });
+    handleSubmit = (e) => {
         e.preventDefault();
         const newChirp = {
             username: this.state.newUser,
@@ -59,18 +59,18 @@ class App extends Component {
                                 <input
                                     type="text"
                                     className="form-control"
-                                    onChange={this.handleNewUserChange}
+                                    onChange={this.handleNewUser}
                                 />
                                 <label>Chirp:</label>
                                 <input
                                     value={this.state.task}
                                     className="form-control"
-                                    onChange={this.handleNewMessageChange}
+                                    onChange={this.handleNewMessage}
                                 />
                                 <button
                                     className="btn btn-primary mt-3"
                                     type="submit"
-                                    onClick={this.handleCreateNewChirp}>
+                                    onClick={this.handleSubmit}>
                                     Submit Chirp
                                 </button>
                             </form>
